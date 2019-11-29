@@ -64,6 +64,6 @@ class camera:
 
 if __name__ == '__main__':
     front=camera(100, 100, 100)
-    for i in range(10):
-        front.shot_and_save(str(i).zfill(3)+'.png')
+    for i in range(200):
+        front.shot_and_save(str(i).zfill(10)[-2:]+'.png')
 
