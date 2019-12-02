@@ -43,6 +43,11 @@ class camera:
         ret, self.frame = self.cap.read()
         return ret
 
+    def pass_frame(self, num_frame):
+        for i in range(num_frame):
+            _, self.frame = self.cap.read()
+        return
+
     def shot_and_save(self, name, cntr=0):
         if cntr>=5:
             print('check camera again...')
