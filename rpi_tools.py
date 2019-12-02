@@ -71,4 +71,5 @@ if __name__ == '__main__':
     front=camera(100, 100, 100)
     for i in range(200):
         front.shot_and_save(str(i).zfill(10)[-2:]+'.png')
+        front.pass_frame(30)
 
