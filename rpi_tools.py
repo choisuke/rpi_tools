@@ -66,6 +66,16 @@ class camera:
         self.cap.release()
         cv2.destroyAllWindows()
 
+import ftplib
+def ftp_upload(hostname, username, passwd, upload_file, upload_path):
+    ftp = ftplib.FTP(hostname, username, passwd=passwd)
+    file = open(upload_file, 'rb')
+    code = ftp.storbinary(upload_path, file)
+    
+    file.close()
+    ftp.close()
+    
+    return code
 
 if __name__ == '__main__':
     front=camera(100, 100, 100)
