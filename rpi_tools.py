@@ -40,8 +40,7 @@ class camera:
         return
     
     def shot(self):
-        ret, self.frame = self.cap.read()
-        return ret
+        return self.cap.read()
 
     def pass_frame(self, num_frame):
         for i in range(num_frame):
