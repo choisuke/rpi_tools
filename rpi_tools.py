@@ -18,7 +18,7 @@ class GPIO_led:
         self.GPIO.output(self.pin_num, self.GPIO.HIGH)
 
     def led_off(self):
-        self.GPIO.output(self.pin_num, self.GPIO.HIGH)
+        self.GPIO.output(self.pin_num, self.GPIO.LOW)
 
 
 ## OpenCV のカメラに関するクラス
