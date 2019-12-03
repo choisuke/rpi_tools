@@ -44,7 +44,7 @@ class camera:
         cv2.destroyAllWindows()
 
 if __name__ == '__main__':
-    front=camera(100, 100, 30, 1)
+    webcam=camera(100, 100, 30, 1)
     for i in range(200):
-        front.pass_frame(30)
-        front.shot_and_save(str(i).zfill(10)[-2:]+'.png')
+        webcam.pass_frame(30)
+        webcam.shot_and_save(str(i).zfill(10)[-2:]+'.png')
