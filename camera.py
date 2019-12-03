@@ -20,21 +20,26 @@ class camera:
 
     def shot(self):
         ret, self.frame = self.cap.read()
-        return ret
+        if ret:
+            return self.frame
+        else:
+            self.shot()
 
     def pass_frame(self, num_frame):
         for i in range(num_frame):
             _, self.frame = self.cap.read()
         return
 
-    def shot_and_save(self, name, cntr=0):
+    def shot_and_save(self, name, gray=False, cntr=0):
         if cntr>=5:
             print('check camera again...')
             return False
         ret, self.frame = self.cap.read()
+        if gray:
+            self.frame = cv2.cvtColor(self.frame, cv2.COLOR_RGB2GRAY)
         if ret:
             cv2.imwrite(name, self.frame)
-            return True
+            return self.frame
         else:
             cntr+=1
         self.shot_and_save(self, name, cntr)
